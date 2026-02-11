@@ -16,37 +16,53 @@
      
      function ChatInput({chatMessages , setChatMessages}){
       const [inputText , setInputText] = React.useState('');
+      const [isLoading , setIsLoading]= React.useState(false);
+        
+      
 
      function saveInputText(event){
         setInputText(event.target.value);
       }
       
-        
+        async function sendMessage() {
+          if (isLoading || inputText === ''){
+            return;
+          }
+          setIsLoading(true);
 
-
-        function sendMessage() {
-          const newChatMessages = [
-            ...chatMessages,
+          setInputText('')
+            const newChatMessages = [
+              ...chatMessages,
             {  
-            message: inputText,
-            sender: 'user',
-            id: crypto.randomUUID()
+              message: inputText,
+              sender: 'user',
+              id: crypto.randomUUID()
             }
         ];
 
-          setChatMessages(newChatMessages);
+        setChatMessages(newChatMessages);
 
-        const response = Chatbot.getResponse(inputText);
+        const response =  await Chatbot.getResponseAsync(inputText);
          setChatMessages([
             ...newChatMessages,
-            {  
-            message: response,
-            sender: 'robot',
-            id: crypto.randomUUID()
-            }
-        ]);
+           {  
+             message: response,
+             sender: 'robot',
+             id: crypto.randomUUID()
+           }
 
+        ]);
             setInputText('');
+            setIsLoading(false);
+        }  
+
+      function handelKeyDown(event){
+        if( event.key === 'Enter')
+        {
+          sendMessage((setInputText(''))) ;
+        }
+
+        else (event.key === 'Escape' &&  setInputText(''))
       }
 
       return(
@@ -56,10 +72,13 @@
             size="30"
             onChange = {saveInputText}
             value = {inputText}
+            onKeyDown = {handelKeyDown}
           /> 
+
           <button
-          onClick = {sendMessage}
-          >Send</button>
+            onClick = {sendMessage}>
+            Send
+           </button>
         </>
       );
      }
@@ -145,6 +164,8 @@
             <ChatInput 
              chatMessages = {chatMessages}
              setChatMessages = {setChatMessages}
+             isLoading 
+             
             />
 
             <ChatMessages 
