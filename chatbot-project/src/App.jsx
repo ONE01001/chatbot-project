@@ -26,7 +26,7 @@ import './App.css'
         If you here till the end , 
         thaaaanks for giving me some of your time to read this , 
         (どうも ありがとう ございます).`,
-         
+
        });
       }, []);
 
@@ -36,7 +36,7 @@ import './App.css'
           <div className = "app-container">
                {chatMessages.length === 0 
               &&(<p className ="Welcome-message" > 
-              Welcome to the chatbot project!send a message using the text box below.
+              Welcome to the chatbot project! send a message using the text box below.
               </p>)}
               
             <ChatMessages 
