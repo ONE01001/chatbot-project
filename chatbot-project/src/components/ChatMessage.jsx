@@ -1,6 +1,6 @@
     import './chatmessage.css' ;
-    import RobotProfileImage from '../assets/robot photo.png';
-    import UserProfileImage from '../assets/user photo.png';
+    import RobotProfileImage from '../assets/Robotpfp.png';
+    import CharizardProfileImage from '../assets/charizard.jpg';
 
 
       export function ChatMessage({message , sender}){
@@ -32,7 +32,7 @@
             {message}
            </div>
             {sender === 'user' && (
-             <img src= {UserProfileImage} className = "chat-message-profile" />
+             <img src= {CharizardProfileImage} className = "chat-message-profile" />
            )}
          </div>
        );

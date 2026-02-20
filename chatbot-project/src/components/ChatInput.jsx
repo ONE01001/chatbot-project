@@ -36,6 +36,8 @@
           }
         ]);
 
+        Chatbot.addResponses()
+
         const response =  await Chatbot.getResponseAsync(inputText);
          setChatMessages([
             ...newChatMessages,
