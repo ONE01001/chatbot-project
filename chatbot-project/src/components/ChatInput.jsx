@@ -1,7 +1,7 @@
      import { useState } from 'react'
      import { Chatbot } from 'supersimpledev';
      import './chatinput.css' ;
-     import LoadingImage from '../assets/loading-spinner.gif';
+     import LoadingImage from '../assets/cat Mark loading3.gif';
      
      export function ChatInput({chatMessages , setChatMessages}){
       const [inputText , setInputText] = useState('');
@@ -64,7 +64,7 @@
       return(
         <div className = "chat-input-container">
           <input 
-            placeholder="Send a message to Chatbot" 
+            placeholder="Send a message to Chatbot ^_^ " 
             size="30"
             onChange = {saveInputText}
             value = {inputText}
