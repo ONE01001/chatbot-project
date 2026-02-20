@@ -1,5 +1,5 @@
     import './chatmessage.css' ;
-    import RobotProfileImage from '../assets/Robotpfp.png';
+    import RobotProfileImage from '../assets/catRobot.jpg';
     import CharizardProfileImage from '../assets/charizard.jpg';
 
 
