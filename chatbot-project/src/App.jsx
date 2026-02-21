@@ -17,7 +17,7 @@ import './App.css'
      
       useEffect(()=> {
         Chatbot.addResponses({
-        Easteregg:` Hi , My full name is Hardik rana , 
+        'Easteregg':` Hi , My full name is Hardik rana , 
         I am a Student currently pursuing (BCA) , 
         This is a small Chatbot project , 
         that i have created . 
@@ -25,7 +25,12 @@ import './App.css'
         texturing animation and much more. 
         If you here till the end , 
         thaaaanks for giving me some of your time to read this , 
-        (どうも ありがとう ございます).`,
+        (どうも ありがとう ございます).` ,
+
+        'activate developer mode':`[Developer Mode Activated...] Monitoring system behavior...`,
+
+         
+         
 
        });
       }, []);
