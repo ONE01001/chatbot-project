@@ -67,7 +67,7 @@
       return(
         <div className = "chat-input-container">
           <input 
-            placeholder="Send a message to Chatbot ^_^ " 
+            placeholder="Send a message to Chatbot ^_^ ,  (Type - easteregg or activate)" 
             size="30"
             onChange = {saveInputText}
             value = {inputText}
