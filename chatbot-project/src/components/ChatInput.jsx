@@ -64,6 +64,15 @@
         else (event.key === 'Escape' &&  setInputText(''))
       }
 
+      function clearMessages(){
+        setChatMessages([]);
+      }
+
+
+
+
+
+
       return(
         <div className = "chat-input-container">
           <input 
@@ -79,6 +88,11 @@
             onClick = {sendMessage}
             className = "Send-button">
               Send
+           </button>
+            <button
+            onClick = {clearMessages}
+            className ="clear-button">
+              clear
            </button>
         </div>
       );

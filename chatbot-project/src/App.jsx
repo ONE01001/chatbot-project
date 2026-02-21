@@ -10,7 +10,8 @@ import './App.css'
 
  function App(){
 
-      const [chatMessages , setChatMessages] = useState([ ]);
+      const [chatMessages , setChatMessages] = useState(
+        JSON.parse(localStorage.getItem('messages'))||[]);
       // const [chatMessages , setChatMessages] = array; 
       // const chatMessages = array[0];
       // const setChatMessages = array[1];
@@ -28,14 +29,12 @@ import './App.css'
         (どうも ありがとう ございます).` ,
 
         'activate developer mode':`[Developer Mode Activated...] Monitoring system behavior...`,
-
-         
-         
-
        });
       }, []);
 
-
+      useEffect(()=>{
+        localStorage.setItem('messages',JSON.stringify(chatMessages))
+      },[chatMessages]);
 
       return(
           <div className = "app-container">
